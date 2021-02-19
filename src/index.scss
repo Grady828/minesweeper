@@ -10,3 +10,38 @@ body {
   margin: 0;
   min-height: 100%;
 }
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0;
+  background-color: paleturquoise;
+}
+ul li {
+  height: 40px;
+  width: 40px;
+  border: 2px solid orange;
+  list-style: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+header {
+  text-align: center;
+  background-color: orange;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  background-color: orange;
+}
+div {
+  // background-image: src= 'water.jpg';
+}
