@@ -20,6 +20,15 @@ export class App extends React.Component {
   }
 
   handleClickCell = async (row, col) => {
+    if (
+      this.state.id === undefined ||
+      this.state.state === 'won' ||
+      this.state.state === 'lost' ||
+      this.state.board[row][col] !== ' '
+    ) {
+      return
+    }
+
     const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/check`
 
     const body = { row: row, col: col }
@@ -68,6 +77,7 @@ export class App extends React.Component {
                 return (
                   <li
                     key={columnIndex}
+                    className={this.state.board[0][0] === ' ' ? '' : 'taken'}
                     onClick={() => this.handleClickCell(rowIndex, columnIndex)}
                   >
                     {cell}
