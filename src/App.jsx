@@ -81,7 +81,7 @@ export class App extends React.Component {
             <li>{this.state.board[6][5]}</li>
             <li>{this.state.board[6][6]}</li>
             <li>{this.state.board[6][7]}</li>
-            cell
+
             <li>{this.state.board[7][0]}</li>
             <li>{this.state.board[7][1]}</li>
             <li>{this.state.board[7][2]}</li>
