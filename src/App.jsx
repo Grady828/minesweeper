@@ -19,8 +19,18 @@ export class App extends React.Component {
     // mines: 10,
   }
 
-  handleClickCell = (row, col) => {
-    console.log(`I clicked row ${row} and col ${col}`)
+  handleClickCell = async (row, col) => {
+    const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/check`
+
+    const body = { row: row, col: col }
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+
+    const game = await response.json()
+    this.setState(game)
   }
   handleNewGame = async () => {
     const response = await fetch(
