@@ -15,7 +15,7 @@ export class App extends React.Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
     // 'id':
-    // state: 'new',
+    state: '',
     // mines: 10,
   }
 
@@ -46,10 +46,20 @@ export class App extends React.Component {
   }
 
   render() {
+    // let header = 'Mine Sweeper'
+    let header = 'Minesweeper'
+
+    if (this.state.state === 'lost') {
+      header = 'You Lose'
+    }
+    if (this.state.state === 'won') {
+      header = 'You Win!!'
+    }
+
     return (
       <div>
         <header>
-          <h1>Mine Sweeper</h1>
+          <h1>{header}</h1>
         </header>
         <section>
           <ul>
