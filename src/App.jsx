@@ -14,12 +14,25 @@ export class App extends React.Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
+    // 'id':
     // state: 'new',
     // mines: 10,
   }
 
   handleClickCell = (row, col) => {
     console.log(`I clicked row ${row} and col ${col}`)
+  }
+  handleNewGame = async () => {
+    const response = await fetch(
+      'https://minesweeper-api.herokuapp.com/games',
+      {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+      }
+    )
+
+    const game = await response.json()
+    this.setState(game)
   }
 
   render() {
@@ -296,7 +309,7 @@ export class App extends React.Component {
           </ul>
         </section>
         <footer>
-          <button> Play Again?</button>
+          <button onClick={this.handleNewGame}> Play Again?</button>
         </footer>
       </div>
     )
