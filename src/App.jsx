@@ -33,6 +33,7 @@ export class App extends React.Component {
             <li>{this.state.board[0][5]}</li>
             <li>{this.state.board[0][6]}</li>
             <li>{this.state.board[0][7]}</li>
+
             <li>{this.state.board[1][0]}</li>
             <li>{this.state.board[1][1]}</li>
             <li>{this.state.board[1][2]}</li>
@@ -41,6 +42,7 @@ export class App extends React.Component {
             <li>{this.state.board[1][5]}</li>
             <li>{this.state.board[1][6]}</li>
             <li>{this.state.board[1][7]}</li>
+
             <li>{this.state.board[2][0]}</li>
             <li>{this.state.board[2][1]}</li>
             <li>{this.state.board[2][2]}</li>
@@ -49,6 +51,7 @@ export class App extends React.Component {
             <li>{this.state.board[2][5]}</li>
             <li>{this.state.board[2][6]}</li>
             <li>{this.state.board[2][7]}</li>
+
             <li>{this.state.board[3][0]}</li>
             <li>{this.state.board[3][1]}</li>
             <li>{this.state.board[3][2]}</li>
@@ -57,6 +60,7 @@ export class App extends React.Component {
             <li>{this.state.board[3][5]}</li>
             <li>{this.state.board[3][6]}</li>
             <li>{this.state.board[3][7]}</li>
+
             <li>{this.state.board[4][0]}</li>
             <li>{this.state.board[4][1]}</li>
             <li>{this.state.board[4][2]}</li>
@@ -65,6 +69,7 @@ export class App extends React.Component {
             <li>{this.state.board[4][5]}</li>
             <li>{this.state.board[4][6]}</li>
             <li>{this.state.board[4][7]}</li>
+
             <li>{this.state.board[5][0]}</li>
             <li>{this.state.board[5][1]}</li>
             <li>{this.state.board[5][2]}</li>
@@ -73,6 +78,7 @@ export class App extends React.Component {
             <li>{this.state.board[5][5]}</li>
             <li>{this.state.board[5][6]}</li>
             <li>{this.state.board[5][7]}</li>
+
             <li>{this.state.board[6][0]}</li>
             <li>{this.state.board[6][1]}</li>
             <li>{this.state.board[6][2]}</li>
