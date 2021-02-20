@@ -31,6 +31,7 @@ li {
 section {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 header {
   text-align: center;
@@ -44,4 +45,9 @@ footer {
 }
 div {
   // background-image: src= 'water.jpg';
+}
+section li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
