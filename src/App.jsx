@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-// import { Board } from './components/Board'
-// import { Cell } from './components/Cell'
 
 export class App extends React.Component {
   state = {
@@ -14,9 +12,8 @@ export class App extends React.Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
-    // 'id':
+
     state: '',
-    // mines: 10,
   }
 
   handleClickCell = async (row, col) => {
@@ -30,7 +27,28 @@ export class App extends React.Component {
     }
 
     const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/check`
+    const body = { row: row, col: col }
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    })
 
+    const game = await response.json()
+    console.log(game)
+    this.setState(game)
+  }
+  handleRightClickCell = async (row, col) => {
+    if (
+      this.state.id === undefined ||
+      this.state.state === 'won' ||
+      this.state.state === 'lost'
+      // this.state.board[row][col] !== ' '
+    ) {
+      return
+    }
+
+    const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/flag`
     const body = { row: row, col: col }
     const response = await fetch(url, {
       method: 'POST',
@@ -49,7 +67,6 @@ export class App extends React.Component {
         headers: { 'content-type': 'application/json' },
       }
     )
-
     const game = await response.json()
     this.setState(game)
   }
@@ -77,8 +94,11 @@ export class App extends React.Component {
                 return (
                   <li
                     key={columnIndex}
-                    className={this.state.board[0][0] === ' ' ? '' : 'taken'}
                     onClick={() => this.handleClickCell(rowIndex, columnIndex)}
+                    onContextMenu={(event) => {
+                      event.preventDefault()
+                      this.handleRightClickCell(rowIndex, columnIndex)
+                    }}
                   >
                     {cell}
                   </li>
