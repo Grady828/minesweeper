@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './index.scss'
 
 export class App extends React.Component {
   state = {
@@ -70,6 +71,18 @@ export class App extends React.Component {
     const game = await response.json()
     this.setState(game)
   }
+  changeCellValueToFont = (cell) => {
+    switch (cell) {
+      case 'F':
+        return <i class="fas fa-flag"></i>
+      case '*':
+        return <i class="fas fa-bomb"></i>
+      case '_':
+        return <i class="fas fa-fish"></i>
+      default:
+        return cell
+    }
+  }
 
   render() {
     // let header = 'Mine Sweeper'
@@ -100,7 +113,7 @@ export class App extends React.Component {
                       this.handleRightClickCell(rowIndex, columnIndex)
                     }}
                   >
-                    {cell}
+                    {this.changeCellValueToFont(cell)}
                   </li>
                 )
               })

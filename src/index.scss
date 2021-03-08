@@ -4,23 +4,24 @@
 
 html {
   height: 100%;
+  background-image: url(images/background.png);
+  background-size: cover;
 }
 
 body {
-  margin: 0;
-  min-height: 100%;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
 }
 ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin: 0;
-  background-color: paleturquoise;
 }
 ul li {
   height: 40px;
   width: 40px;
-  border: 2px solid orange;
+  border: 2px solid #1c3b5e;
   list-style: none;
 }
 ul,
@@ -32,22 +33,51 @@ section {
   display: flex;
   justify-content: center;
   text-align: center;
+  background-color: #91c8ff;
+  width: 22rem;
+  margin: 0px auto;
 }
 header {
   text-align: center;
-  background-color: orange;
+  background-color: #1c3b5e;
+  margin: 1px auto;
+  width: 22rem;
+  font-family: 'Abril Fatface', cursive;
+  margin-top: 5rem;
+  margin-bottom: 0rem;
+  color: #e0e7ea;
 }
 footer {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
-  background-color: orange;
+  margin-top: 2rem;
+  background-color: #e0e7ea;
+  margin: 5px auto;
+  width: 0rem;
 }
-div {
-  // background-image: src= 'water.jpg';
-}
+
 section li {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+button {
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #1c3b5e;
+  // font-family: 'Abril Fatface', cursive;
+  font-size: smaller;
+}
+div {
+  border: 2px solid rgb(0, 0, 0);
+  min-height: 100%;
+  background-image: url(images/water.jpg);
+  background-position: 100%;
+  background-size: cover;
+  border-radius: 30px;
+  // box-sizing: border-box;
+  width: 500px;
+  height: 600px;
 }
